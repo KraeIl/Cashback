@@ -3,10 +3,18 @@ package app;
 
 public class Interface {
     private Cliente cliente;
+    private Acesso a;
 
     public Interface() {
 
-        Acesso a = new Acesso();
+        a = new Acesso();
+        iniciar();
+    }
+
+    public void iniciar(){
+
+        a.login();
+
         cliente = a.getClienteLogin();
 
         Loja l = new Loja();
@@ -19,7 +27,7 @@ public class Interface {
 
         l.mostraCarrinho();
 
-        l.concluirCompra(cliente);
+        l.concluirCompra(cliente, this);
     }
 
     public Cliente getCliente() {

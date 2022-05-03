@@ -82,12 +82,12 @@ public class Loja {
         }
     }
 
-    public void concluirCompra(Cliente c){
+    public void concluirCompra(Cliente c, Interface in){
         if (c.getPontos() == 0){
             float valorCompra = 0;
             float pontosGanhos;
 
-            for (int i = 0; i < pia.getPia().size(); i++){
+            for (int i = 0; i < pia.getPia().size() - 1; i++){
                 valorCompra += pia.getPia().get(i).getValorDinheiro();
             }
 
@@ -96,7 +96,9 @@ public class Loja {
                                             "Pagamento", JOptionPane.INFORMATION_MESSAGE);
             c.addPontos(pontosGanhos);
 
-
+            JOptionPane.showMessageDialog(null, "Você atualmente tem " + c.getPontos() + " pontos", 
+                                            "Pontos", JOptionPane.INFORMATION_MESSAGE);
+            in.iniciar();
         }
 
 
