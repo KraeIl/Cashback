@@ -1,4 +1,4 @@
-package produtos;
+package app;
 public class Produto {
     private String nomeProduto;
     private float valorDinheiro, valorPonto;

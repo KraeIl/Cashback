@@ -1,4 +1,4 @@
-package produtos;
+package app;
 public class Teclado extends Produto {
     
     String tipoSwitch;

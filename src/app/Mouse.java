@@ -1,4 +1,4 @@
-package produtos;
+package app;
 public class Mouse extends Produto{
     String dpi;
 

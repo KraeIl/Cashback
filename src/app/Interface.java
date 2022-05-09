@@ -13,21 +13,29 @@ public class Interface {
 
     public void iniciar(){
 
-        a.login();
+        cliente = null;
 
-        cliente = a.getClienteLogin();
+        while (cliente == null){
+            cliente = a.login();
+        }
+        
 
         Loja l = new Loja();
 
-        boolean resposta = true;
+        boolean continuar = false;
 
-        while (resposta){
-            resposta = l.novaCompra();
+        while (!continuar){
+            l.venda();
+            continuar = l.mostraCarrinho();
         }
 
-        l.mostraCarrinho();
+        boolean finalizar = false;
 
-        l.concluirCompra(cliente, this);
+        while (!finalizar){
+            finalizar = l.concluirCompra(cliente);
+        }
+        
+        iniciar();
     }
 
     public Cliente getCliente() {
